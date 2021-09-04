@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/whatsmyip/static/css/main.a617e044.chunk.css",
+    "main.js": "/whatsmyip/static/js/main.f37149d6.chunk.js",
+    "main.js.map": "/whatsmyip/static/js/main.f37149d6.chunk.js.map",
+    "runtime-main.js": "/whatsmyip/static/js/runtime-main.f4548038.js",
+    "runtime-main.js.map": "/whatsmyip/static/js/runtime-main.f4548038.js.map",
+    "static/js/2.85e63cd4.chunk.js": "/whatsmyip/static/js/2.85e63cd4.chunk.js",
+    "static/js/2.85e63cd4.chunk.js.map": "/whatsmyip/static/js/2.85e63cd4.chunk.js.map",
+    "static/js/3.437d90ae.chunk.js": "/whatsmyip/static/js/3.437d90ae.chunk.js",
+    "static/js/3.437d90ae.chunk.js.map": "/whatsmyip/static/js/3.437d90ae.chunk.js.map",
+    "index.html": "/whatsmyip/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/whatsmyip/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.85e63cd4.chunk.js.LICENSE.txt": "/whatsmyip/static/js/2.85e63cd4.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/whatsmyip/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f4548038.js",
+    "static/js/2.85e63cd4.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.f37149d6.chunk.js"
+  ]
+}
