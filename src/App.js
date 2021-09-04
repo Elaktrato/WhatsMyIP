@@ -1,6 +1,7 @@
 
 import './App.css';
 import { useState } from "react";
+import Card from "./Card"
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <Map localData={locationData} />
+      <Card localData={locationData} />
     </div>
   );
 }
