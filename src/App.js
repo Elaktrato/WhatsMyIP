@@ -38,9 +38,31 @@ function App() {
     },
 })
 
+const getIp = async () => {
+  let ipUrl = "https://geo.ipify.org/api/v1?apiKey=";
+  let ipApiKey = "at_bD53XjTCgu3ysAFgMhm8PYNciDESg";
+  let currentIpInfo;
+  try {
+    const response = await fetch(ipUrl + ipApiKey)
+    console.log(response)
+    if(response.ok) {
+      currentIpInfo = await response.json()
+    }
+  } catch(error) {
+    console.log(error);
+  }
+  return currentIpInfo
+}
+
+
+useEffect(() => {
+  setLocationData(getIp);
+},[])
+
   return (
     <div className="App">
       <Map localData={locationData} />
+      <div>{locationData}</div>
     </div>
   );
 }
