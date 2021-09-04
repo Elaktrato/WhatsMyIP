@@ -18,7 +18,6 @@ class Card extends React.Component {
             <div className="infobox">
             <div className="IpContent">
                 <IpDisplay ip={ this.props.locationData.ip } /></div>
-            {/* <div className="Timezone"><TimeZone /></div> */}
             <div className="BasicInfo">{/* <BasicInfo /> */}</div>
             </div>
             </div>
