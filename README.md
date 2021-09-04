@@ -1,3 +1,7 @@
+# Viewing the Live Site
+
+You can view a live version of this app [here](https://elaktro.github.io/whatsmyip/).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
