@@ -1,5 +1,6 @@
 import React from 'react';
 import IpDisplay from "./IpDisplay";
+import TimeZone from "./TimeZone";
 
 class Card extends React.Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class Card extends React.Component {
             <div className="infobox">
             <div className="IpContent">
                 <IpDisplay ip={ this.props.locationData.ip } /></div>
+            <div className="TimeZone"><TimeZone /></div>
             <div className="BasicInfo">{/* <BasicInfo /> */}</div>
             </div>
             </div>
