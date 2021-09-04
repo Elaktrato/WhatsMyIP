@@ -1,10 +1,21 @@
-import React from "react";
-import {DateTime} from "luxon"
+import React, { useEffect, useState } from "react";
+import { DateTime } from "luxon"
 
 function TimeZone(props) {
-    var local = DateTime.local();
+    let locale = DateTime.local().zoneName;
+    const [currentTime, setCurrentTime] = useState("")
+    
 
-    return <div> Your time zone is { local.zoneName } </div>
+    useEffect(() => {
+        const interval = setInterval(() => {
+            let timeRightNow = DateTime.now().toFormat('tttt')
+           setCurrentTime(timeRightNow)
+        }, 1000);
+        return () => clearInterval(interval);
+      }, []);
+
+
+    return <div > Your time is { currentTime } {locale} < /div>
 }
 
 export default TimeZone;
