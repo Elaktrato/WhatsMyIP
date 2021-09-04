@@ -1,26 +1,39 @@
-import React from "react";
+import React from 'react';
 import IpDisplay from "./IpDisplay";
-import Flag from "./Flag";
-import TimeZone from "./TimeZone";
-import BasicInfo from "./BasicInfo";
-import ExpandedInfo from "./ExpandedInfo";
 
+class Card extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-function Card(props) {
-    console.log("Card props.locationData")
-    console.log(props.locationData)
-    return (
-    <div className="card">
-        <div className="flagWithInfo" >
-            {/* <Flag /> */}
-            <div className="ipAndInfo">
-                <IpDisplay ip={ props.locationData.ip } />
-                <TimeZone />
-                {/* <BasicInfo /> */}
+    render() {
+
+        return (
+        <div className="CardContent">
+
+            <div className="row1">
+            <div className="FlagContent">
+             {/* <Flag /> */}
             </div>
-        </div>
-        {/* <ExpandedInfo /> */}
-    </div>)
+            <div className="infobox">
+            <div className="IpContent">
+                <IpDisplay ip={ this.props.locationData.ip } /></div>
+            {/* <div className="Timezone"><TimeZone /></div> */}
+            <div className="BasicInfo">{/* <BasicInfo /> */}</div>
+            </div>
+            </div>
+
+            <div className="row2">
+            <div className="CountryInfo">
+                <h3>Country Info</h3>
+                {/* <ExpandedInfo /> */}
+            </div>
+    </div>
+
+</div>
+
+    )}
+
 }
 
-export default Card;
+export default Card
