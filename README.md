@@ -1,6 +1,6 @@
 # Viewing the Live Site
 
-You can view a live version of this app [here](https://elaktro.github.io/whatsmyip/).
+You can view a live version of this app [here](https://elaktrato.github.io/whatsmyip/).
 
 # Getting Started with Create React App
 
