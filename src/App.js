@@ -1,6 +1,7 @@
 
 import './App.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Map from "./Map"
 
 
 function App() {
@@ -36,11 +37,13 @@ function App() {
         "vpn": false,
         "tor": false
     },
-})
+});
+
+const [loadingIp, setLoadingIp] = useState(true);
 
 const getIp = async () => {
   let ipUrl = "https://geo.ipify.org/api/v1?apiKey=";
-  let ipApiKey = "at_bD53XjTCgu3ysAFgMhm8PYNciDESg";
+  let ipApiKey = "at_VF7kJXfX3dBVqla8cpVBLGmfQO3cg";
   let currentIpInfo;
   try {
     const response = await fetch(ipUrl + ipApiKey)
@@ -51,18 +54,30 @@ const getIp = async () => {
   } catch(error) {
     console.log(error);
   }
+  console.log("currentIpInfo")
+  console.log(currentIpInfo)
   return currentIpInfo
 }
 
 
-useEffect(() => {
-  setLocationData(getIp);
-},[])
+useEffect(async () =>  {
+  setLocationData(await getIp());
+  console.log(locationData);
+  setLoadingIp(false)
+}, [])
+
+let mapSection;
+if(!loadingIp){
+ mapSection = <Map locationData={locationData} />
+}else{
+  mapSection = ""
+}
+
 
   return (
     <div className="App">
-      <Map localData={locationData} />
-      <div>{locationData}</div>
+      {mapSection}
+      <div></div>
     </div>
   );
 }
