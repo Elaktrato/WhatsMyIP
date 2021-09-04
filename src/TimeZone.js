@@ -1,11 +1,7 @@
 import React from "react";
 
-
 function TimeZone(props) {
-    console.log("props.ip")
-
-    console.log(props.ip)
-    return <div> Your IP is { props.ip } </div>
+    return <div> Your IP is { DateTime.now().setLocale("fr").locale } </div>
 }
 
 export default TimeZone;
