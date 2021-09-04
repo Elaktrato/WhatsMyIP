@@ -1,6 +1,6 @@
 # Viewing the Live Site
 
-You can view a live version of this app [here](https://elaktrato.github.io/whatsmyip/).
+You can view a live version of this app [here](https://Elaktrato.github.io/WhatsMyIP/).
 
 # Getting Started with Create React App
 
