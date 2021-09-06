@@ -48,22 +48,21 @@ const [loadingIp, setLoadingIp] = useState(true);
 
 const getIp = async () => {
   let ipUrl = "https://geo.ipify.org/api/v1?apiKey=";
-  let ipApiKey = "at_VF7kJXfX3dBVqla8cpVBLGmfQO3cgasd";
+  let ipApiKey = "at_VF7kJXfX3dBVqla8cpVBLGmfQO3cg";
   let currentIpInfo = {error: "unknown"};
   try {
     const response = await fetch(ipUrl + ipApiKey)
-    console.log(response)
     if(response.ok) {
       setErrorState(false);
       currentIpInfo = await response.json()
+    }else{
+      setErrorState(true);
+      return currentIpInfo
     }
   } catch(error) {
-    setErrorState(true)
+    setErrorState(true);
     currentIpInfo.error = error.message
-    console.log(error);
   }
-  console.log("currentIpInfo")
-  console.log(currentIpInfo)
   return currentIpInfo
 }
 
@@ -72,17 +71,17 @@ useEffect(() =>  {
   async function getLoc() {
   setLocationData(await getIp());
   console.log(locationData);
-  setLoadingIp(false)
+  setLoadingIp(false);
   }
 
   getLoc()
 }, [])
 
 let mapSection;
-if(!loadingIp){
- mapSection = <Map locationData={locationData} />
-}else if(errorState){
+if(errorState){
   mapSection = <ErrorIpify  />
+}else if(!loadingIp){
+  mapSection = <Map locationData={locationData} />
 }
 else{
   mapSection = <Loader />
