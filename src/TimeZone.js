@@ -9,28 +9,28 @@ function TimeZone(props) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            let timeRightNow = () => {throw error} // DateTime.now().toFormat('tttt')
-            if(timeRightNow !== "" && timeRightNow !== null){
-              setCurrentTime(timeRightNow)
-              setLoadingTime(false)
-            } else if(timeRightNow === null || !timeRightNow){
-              setTimeError(true);
+            let timeRightNow = () => { throw error } // DateTime.now().toFormat('tttt')
+            if (timeRightNow !== "" && timeRightNow !== null) {
+                setCurrentTime(timeRightNow)
+                setLoadingTime(false)
+            } else if (timeRightNow === null || !timeRightNow) {
+                setTimeError(true);
             }
         }, 1000);
         return () => clearInterval(interval);
-      }, [currentTime]);
+    }, [currentTime]);
 
     let timeComponent;
-    if(!loadingTime){
-      timeComponent = `Your time is ${currentTime} ${locale}`
-    } else if(timeError){
-      timeComponent = "Something has gone wrong when trying to get your time! Please try reloading the page"
+    if (!loadingTime) {
+        timeComponent = `Your time is ${currentTime} ${locale}`
+    } else if (timeError) {
+        timeComponent = "Something has gone wrong when trying to get your time! Please try reloading the page"
     } else {
-      timeComponent = "Loading your time..."
+        timeComponent = "Loading your time..."
     }
 
 
-    return <div> {timeComponent} </div>
+    return <div > { timeComponent } < /div>
 }
 
 export default TimeZone;
