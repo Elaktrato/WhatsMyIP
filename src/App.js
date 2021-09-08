@@ -1,7 +1,10 @@
 
 import './App.css';
 import { useState, useEffect } from "react";
-import Map from "./Map"
+import Map from "./Map";
+import Loader from "./Loader"
+import ErrorIpify from './ErrorIpify'
+
 
 
 function App() {
@@ -39,38 +42,49 @@ function App() {
     },
 });
 
+const [errorState, setErrorState] = useState(false);
+
 const [loadingIp, setLoadingIp] = useState(true);
 
 const getIp = async () => {
   let ipUrl = "https://geo.ipify.org/api/v1?apiKey=";
   let ipApiKey = "at_VF7kJXfX3dBVqla8cpVBLGmfQO3cg";
-  let currentIpInfo;
+  let currentIpInfo = {error: "unknown"};
   try {
     const response = await fetch(ipUrl + ipApiKey)
-    console.log(response)
     if(response.ok) {
+      setErrorState(false);
       currentIpInfo = await response.json()
+    }else{
+      setErrorState(true);
+      return currentIpInfo
     }
   } catch(error) {
-    console.log(error);
+    setErrorState(true);
+    currentIpInfo.error = error.message
   }
-  console.log("currentIpInfo")
-  console.log(currentIpInfo)
   return currentIpInfo
 }
 
 
-useEffect(async () =>  {
+useEffect(() =>  {
+  async function getLoc() {
   setLocationData(await getIp());
   console.log(locationData);
-  setLoadingIp(false)
+  setLoadingIp(false);
+  }
+
+  getLoc()
 }, [])
 
 let mapSection;
-if(!loadingIp){
- mapSection = <Map locationData={locationData} />
-}else{
-  mapSection = ""
+if(errorState){
+  mapSection = <ErrorIpify  />
+}else if(!loadingIp){
+  mapSection = <Map locationData={locationData} />
+}
+else{
+  mapSection = <Loader />
 }
 
 

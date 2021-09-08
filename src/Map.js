@@ -1,13 +1,36 @@
-import React from "react";
-import Card from "./Card"
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import Card from "./Card";
+import { useState } from "react";
 
-
-function Map (props){
-
-    console.log("Map props.locationData")
-    console.log(props.locationData)
-
-    return <Card locationData={ props.locationData } />
-}
-
-export default Map;
+export default function Map (props) {
+    const locationData = props.locationData.location;
+    const centerLoc = [locationData.lat, locationData.lng];
+    const [cardVisible, setCardVisible] = useState(true);
+    const handleClick = () => {
+        setCardVisible((prevState) => !prevState);
+    };
+    return (
+        <MapContainer
+            style={{ height: "100vh", width: "100vw" }}
+            center={centerLoc}
+            zoom={13}
+            scrollWheelZoom={false}
+        >
+            <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker
+                position={centerLoc}
+                eventHandlers={{
+                    click: () => {
+                        handleClick();
+                    }
+                }}
+            ></Marker>
+            {cardVisible && (
+                <Card locationData={props.locationData} closeCard={handleClick} />
+            )}
+        </MapContainer>
+    );
+};
