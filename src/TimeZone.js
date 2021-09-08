@@ -15,7 +15,7 @@ function TimeZone(props) {
       }, []);
 
 
-    return <div > Your time is { currentTime } {locale} < /div>
+    return <div> Your time is { currentTime } {locale} </div>
 }
 
 export default TimeZone;
