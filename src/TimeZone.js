@@ -9,16 +9,26 @@ function TimeZone(props) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            let timeRightNow = () => { throw error } // DateTime.now().toFormat('tttt')
-            if (timeRightNow !== "" && timeRightNow !== null) {
-                setCurrentTime(timeRightNow)
-                setLoadingTime(false)
-            } else if (timeRightNow === null || !timeRightNow) {
+            let timeRightNow = () => { throw new Error('Yeah... Sorry') } // DateTime.now().toFormat('tttt')
+            try {
+                if (timeRightNow !== "" && timeRightNow !== null) {
+                    setCurrentTime(timeRightNow)
+                    setLoadingTime(false)
+                } else if (timeRightNow === null || !timeRightNow) {
+                    setTimeError(true);
+                }
+            } catch (error) {
+                console.log(error)
                 setTimeError(true);
+            } finally {
+              setCurrentTime(timeRightNow)
+              setLoadingTime(false)
             }
         }, 1000);
         return () => clearInterval(interval);
     }, [currentTime]);
+
+// Need some help with not displaying the error message and instead have everything render anyways
 
     let timeComponent;
     if (!loadingTime) {
@@ -30,7 +40,7 @@ function TimeZone(props) {
     }
 
 
-    return <div > { timeComponent } < /div>
+    return <div > { timeComponent } </div>
 }
 
 export default TimeZone;
