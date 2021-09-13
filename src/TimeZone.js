@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { DateTime } from "luxon"
 
-function TimeZone(props) {
+function TimeZone() {
     let locale = DateTime.local().zoneName;
     const [currentTime, setCurrentTime] = useState("");
     const [loadingTime, setLoadingTime] = useState(true);
@@ -28,7 +28,7 @@ function TimeZone(props) {
     }
 
 
-    return <div > { timeComponent } < /div>
+    return <div className="currentTime" > { timeComponent } < /div>
 }
 
 export default TimeZone;

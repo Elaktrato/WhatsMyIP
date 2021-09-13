@@ -58,7 +58,7 @@
 
 #closeBtn {
     padding: 0.5rem;
-    color: darkred;
+    color: #e3000b;
     font-weight: bold;
     font-size: 1.25rem;
 }
@@ -76,42 +76,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px;
     width: 50%;
+    height: max-content;
 }
 
 .infobox {
     box-sizing: content-box;
-    width: 300px;
-    height: 300px;
-    padding: 30px;
-    border: 5px solid blue;
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    padding: 20px;
     width: 50%;
 }
 
 .IpContent {
-    background-color: cadetblue;
-    margin: 10px;
-    padding: 20px;
+    padding: 0 1rem 1rem 1rem;
     font-size: 30px;
 }
 
-.Timezone {
-    background-color: cadetblue;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
+.TimeZone {
+    padding: 1rem;
+    padding-top: 0;
+}
+
+.currentTime {
+    font-size: 1.2rem;
 }
 
 .BasicInfo {
-    background-color: cadetblue;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
+    font-size: 1.2rem;
+    padding: 0 1rem 1rem 1rem;
+    text-align: left;
 }
 
 .row2 {
