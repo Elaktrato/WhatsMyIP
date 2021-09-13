@@ -7,7 +7,7 @@ function ExpandedInfo(props) {
             <div className="CountryInfoCol">
                 <p><strong>Native name:</strong> {props.info.nativeName}</p>
                 <p><strong>Currency:</strong> {props.info.currencies[0].name} ({props.info.currencies[0].symbol})</p>
-                <p><strong>Population:</strong> {props.info.population} people</p>
+                <p><strong>Population:</strong> {props.info.population.toLocaleString("en-GB")} people</p>
             </div>
             <div className="CountryInfoCol">
                 <p><strong>Region:</strong> {props.info.region}</p>
