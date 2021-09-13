@@ -5,7 +5,7 @@ function BasicInfo(props) {
 
   console.log(props.languages);
   return (
-    <div className="BasicInfo">
+    <div>
       <div><strong>Language: </strong> 
           <span>{props.languages.map((language) => {
           return language.name
