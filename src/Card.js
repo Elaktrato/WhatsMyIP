@@ -48,7 +48,11 @@ class Card extends React.Component {
                         }}>X</span>
                 </div>
                 <div className="row1">
-                    <div className="FlagContent"><Flag flag={this.state.country.flag}/></div>
+                    <div className="FlagContent">
+                        <Flag 
+                            flag={this.state.country.flag}
+                            />
+                    </div>
                     <div className="infobox">
                         <div className="IpContent">
                             <IpDisplay ip={this.props.locationData.ip} />
