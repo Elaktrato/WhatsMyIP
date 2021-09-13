@@ -12,7 +12,8 @@ function ExpandedInfo(props) {
             <div className="CountryInfoCol">
                 <p><strong>Region:</strong> {props.info.region}</p>
                 <p><strong>Subregion:</strong> {props.info.subregion}</p>
-                <p><strong>Regional bloc:</strong> {props.info.regionalBlocs[0]["name"]}</p>
+                {props.info.regionalBlocs[0] && <p><strong>Regional bloc:</strong> {props.info.regionalBlocs[0]["name"]}</p> }
+                
             </div>
         </div>
     );
