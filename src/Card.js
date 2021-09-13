@@ -1,6 +1,7 @@
 import React from "react";
 import IpDisplay from "./IpDisplay";
 import BasicInfo from "./BasicInfo";
+import ExpandedInfo from "./ExpandedInfo";
 import TimeZone from "./TimeZone";
 import Flag from "./Flag"
 
@@ -69,10 +70,7 @@ class Card extends React.Component {
                 </div>
 
                 <div className="row2">
-                    <div className="CountryInfo">
-                        <h3>Country Info</h3>
-                        {/* <ExpandedInfo /> */}
-                    </div>
+                    <ExpandedInfo info={this.state.country}/>
                 </div>
             </div>
         );
