@@ -48,7 +48,7 @@ const [loadingIp, setLoadingIp] = useState(true);
 
 const getIp = async () => {
   let ipUrl = "https://geo.ipify.org/api/v1?apiKey=";
-  let ipApiKey = "at_VF7kJXfX3dBVqla8cpVBLGmfQO3cg";
+  let ipApiKey = "at_VF7kJXfX3dBVqla8cpVBLGmfQO3cgaadasd";
   let currentIpInfo = {error: "unknown"};
   try {
     const response = await fetch(ipUrl + ipApiKey)
