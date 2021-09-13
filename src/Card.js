@@ -8,7 +8,10 @@ import Flag from "./Flag"
 class Card extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            error: false,
+            isLoading: true
+        };
     }
 
     async getCountry() {
@@ -23,9 +26,13 @@ class Card extends React.Component {
             }
         } catch (error) {
             console.log(error);
+            this.setState({error: true})
         }
         console.log("currentCountryInfo");
         console.log(currentCountryInfo);
+        if(!currentCountryInfo){
+            this.setState({error: true})
+        }
         return currentCountryInfo;
     }
 
@@ -33,13 +40,17 @@ class Card extends React.Component {
         let country = await this.getCountry();
         this.setState({ country });
         console.log(this.state);
+        this.setState({isLoading: false})
     }
 
     render() {
-        if (!this.state.country) {
-            return <div>Loading</div>
+        if (this.state.error == true) {
+            return <div className="CardContent" >Whoopee dee doo</div>
         }
-
+        else if (this.state.isLoading || !this.state.country){
+            return <div className="CardContent" >Loading</div>
+        }
+        else if(this.state.country){
         return (
             <div className="CardContent">
                 <div id="closeContainer">
@@ -61,7 +72,7 @@ class Card extends React.Component {
                         <div className="TimeZone"><TimeZone /></div>
                         <div className="BasicInfo">
                             <BasicInfo
-                                languages={"languages will be here"}
+                                languages={this.state.country.languages}
                                 capitalCity={this.state.country.capital}
                                 callingCode={this.state.country.callingCodes}
                             />
@@ -73,7 +84,7 @@ class Card extends React.Component {
                     <ExpandedInfo info={this.state.country}/>
                 </div>
             </div>
-        );
+        );}
     }
 }
 
