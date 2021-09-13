@@ -71,7 +71,7 @@ class Card extends React.Component {
                         <div className="TimeZone"><TimeZone /></div>
                         <div className="BasicInfo">
                             <BasicInfo
-                                languages={"languages will be here"}
+                                languages={this.state.country.languages}
                                 capitalCity={this.state.country.capital}
                                 callingCode={this.state.country.callingCodes}
                             />

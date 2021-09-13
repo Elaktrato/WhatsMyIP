@@ -5,10 +5,15 @@ function BasicInfo(props) {
 
   console.log(props.languages);
   return (
-    <div>
-      <div>Language: {props.languages}</div>
-      <div>Capital city: {props.capitalCity}</div>
-      <div>Calling Code: {props.callingCode}</div>
+    <div className="BasicInfo">
+      <div><strong>Language: </strong> 
+          <span>{props.languages.map((language) => {
+          return language.name
+        }).join(", ")
+        }</span>
+        </div>
+      <div><strong>Capital city:</strong> {props.capitalCity}</div>
+      <div><strong>Calling Code:</strong> {props.callingCode}</div>
     </div>
   );
 }
