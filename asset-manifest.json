@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/WhatsMyIP/static/css/main.e00fc60c.chunk.css",
-    "main.js": "/WhatsMyIP/static/js/main.5475164e.chunk.js",
-    "main.js.map": "/WhatsMyIP/static/js/main.5475164e.chunk.js.map",
+    "main.css": "/WhatsMyIP/static/css/main.f23889cc.chunk.css",
+    "main.js": "/WhatsMyIP/static/js/main.cb7eac53.chunk.js",
+    "main.js.map": "/WhatsMyIP/static/js/main.cb7eac53.chunk.js.map",
     "runtime-main.js": "/WhatsMyIP/static/js/runtime-main.47ee68eb.js",
     "runtime-main.js.map": "/WhatsMyIP/static/js/runtime-main.47ee68eb.js.map",
-    "static/js/2.e2e5d901.chunk.js": "/WhatsMyIP/static/js/2.e2e5d901.chunk.js",
-    "static/js/2.e2e5d901.chunk.js.map": "/WhatsMyIP/static/js/2.e2e5d901.chunk.js.map",
+    "static/js/2.e84ad4ca.chunk.js": "/WhatsMyIP/static/js/2.e84ad4ca.chunk.js",
+    "static/js/2.e84ad4ca.chunk.js.map": "/WhatsMyIP/static/js/2.e84ad4ca.chunk.js.map",
     "static/js/3.2d79b638.chunk.js": "/WhatsMyIP/static/js/3.2d79b638.chunk.js",
     "static/js/3.2d79b638.chunk.js.map": "/WhatsMyIP/static/js/3.2d79b638.chunk.js.map",
     "index.html": "/WhatsMyIP/index.html",
-    "static/css/main.e00fc60c.chunk.css.map": "/WhatsMyIP/static/css/main.e00fc60c.chunk.css.map",
-    "static/js/2.e2e5d901.chunk.js.LICENSE.txt": "/WhatsMyIP/static/js/2.e2e5d901.chunk.js.LICENSE.txt"
+    "static/css/main.f23889cc.chunk.css.map": "/WhatsMyIP/static/css/main.f23889cc.chunk.css.map",
+    "static/js/2.e84ad4ca.chunk.js.LICENSE.txt": "/WhatsMyIP/static/js/2.e84ad4ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.47ee68eb.js",
-    "static/js/2.e2e5d901.chunk.js",
-    "static/css/main.e00fc60c.chunk.css",
-    "static/js/main.5475164e.chunk.js"
+    "static/js/2.e84ad4ca.chunk.js",
+    "static/css/main.f23889cc.chunk.css",
+    "static/js/main.cb7eac53.chunk.js"
   ]
 }
