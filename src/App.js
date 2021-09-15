@@ -35,13 +35,17 @@ const getIp = async () => {
   return currentIpInfo
 }
 
-
+UpdateLoadingState(){
+  if(loadingIp >= 3){
+    setLoadingIp()
+  }
+}
 
 useEffect(() =>  {
   async function getLoc() {
   setLocationData(await getIp());
   console.log(locationData);
-  setLoadingIp(prevState+1);
+  setLoadingIp(loadingIp+1);
   }
 
   getLoc()
