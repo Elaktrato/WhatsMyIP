@@ -8,11 +8,12 @@ import ErrorIpify from './ErrorIpify'
 
 
 function App() {
-  const [locationData, setLocationData] = useState({});
+  
+const [locationData, setLocationData] = useState({});
 
 const [errorState, setErrorState] = useState(false);
 
-const [loadingIp, setLoadingIp] = useState(true);
+const [loadingIp, setLoadingIp] = useState(0);
 
 const getIp = async () => {
   let ipUrl = "https://geo.ipify.org/api/v1?apiKey=";
@@ -35,11 +36,12 @@ const getIp = async () => {
 }
 
 
+
 useEffect(() =>  {
   async function getLoc() {
   setLocationData(await getIp());
   console.log(locationData);
-  setLoadingIp(false);
+  setLoadingIp(prevState+1);
   }
 
   getLoc()
@@ -48,18 +50,17 @@ useEffect(() =>  {
 let mapSection;
 if(errorState){
   mapSection = <ErrorIpify  />
-}else if(!loadingIp){
+}else if(loadingIp !== 2){
   mapSection = <Map locationData={locationData} />
 }
 else{
-  mapSection = <Loader />
+  mapSection = <Loader loadingState={loadingIp} />
 }
 
 
   return (
     <div className="App">
       {mapSection}
-      <div></div>
     </div>
   );
 }
